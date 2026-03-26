@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="parchment-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.85  0 0 0 0 0.72  0 0 0 0 0.45  0 0 0 0.15 0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <linearGradient id="parch-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2010"/>
+      <stop offset="40%" stop-color="#1e1808"/>
+      <stop offset="100%" stop-color="#241c0a"/>
+    </linearGradient>
+    <linearGradient id="ink-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c9aa5d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8a7040" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Parchment background -->
+  <rect width="800" height="500" fill="url(#parch-bg)"/>
+  <rect width="800" height="500" fill="url(#parchment-noise)"/>
+
+  <!-- Parchment inner area — slightly lighter -->
+  <rect x="40" y="35" width="720" height="430" rx="3" fill="#201808" opacity="0.5"/>
+
+  <!-- Outer border — double ruled like a manuscript -->
+  <rect x="30" y="25" width="740" height="450" rx="2" fill="none" stroke="#8a6828" stroke-width="2.5" opacity="0.8"/>
+  <rect x="40" y="35" width="720" height="430" rx="1" fill="none" stroke="#6a5020" stroke-width="1" opacity="0.5"/>
+
+  <!-- Illuminated capital I — decorative large letter -->
+  <rect x="58" y="58" width="52" height="72" rx="2" fill="#1a1208" stroke="#c9aa5d" stroke-width="1.5" opacity="0.9"/>
+  <!-- Ornamental I letter body -->
+  <rect x="77" y="64" width="14" height="60" rx="1" fill="#c9aa5d" opacity="0.85"/>
+  <rect x="65" y="64" width="38" height="9" rx="1" fill="#c9aa5d" opacity="0.8"/>
+  <rect x="65" y="115" width="38" height="9" rx="1" fill="#c9aa5d" opacity="0.8"/>
+  <!-- Small ornamental cross in capital block -->
+  <line x1="84" y1="78" x2="84" y2="100" stroke="#8b0000" stroke-width="2" opacity="0.7"/>
+  <line x1="78" y1="84" x2="90" y2="84" stroke="#8b0000" stroke-width="2" opacity="0.7"/>
+
+  <!-- Title line -->
+  <text x="120" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="bold"
+        fill="#c9aa5d" opacity="0.95" letter-spacing="3">N PRINCIPIO ERAT VERBUM</text>
+  <text x="120" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="14"
+        fill="#a88840" opacity="0.85" letter-spacing="2">et Verbum erat apud Deum, et Deus erat Verbum.</text>
+
+  <!-- Horizontal rule after title -->
+  <line x1="58" y1="145" x2="742" y2="145" stroke="#6a5020" stroke-width="1" opacity="0.6"/>
+  <line x1="58" y1="148" x2="742" y2="148" stroke="#3a2c10" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Column divider -->
+  <line x1="408" y1="158" x2="408" y2="435" stroke="#4a3818" stroke-width="1" opacity="0.5"/>
+
+  <!-- Left column — Latin text lines (simulated text blocks) -->
+  <!-- Using actual Latin phrases for authenticity -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#9e8040" opacity="0.85">
+
+    <text x="62" y="178" font-size="13" letter-spacing="0.5">Hoc erat in principio apud Deum.</text>
+    <text x="62" y="198" font-size="13" letter-spacing="0.5">Omnia per ipsum facta sunt: et sine</text>
+    <text x="62" y="218" font-size="13" letter-spacing="0.5">ipso factum est nihil quod factum est.</text>
+    <text x="62" y="238" font-size="13" letter-spacing="0.5">In ipso vita erat, et vita erat lux</text>
+    <text x="62" y="258" font-size="13" letter-spacing="0.5">hominum: et lux in tenebris lucet,</text>
+    <text x="62" y="278" font-size="13" letter-spacing="0.5">et tenebrae eam non comprehenderunt.</text>
+
+    <!-- Red rubric / section marker -->
+    <text x="62" y="308" font-size="12" fill="#8b0000" opacity="0.9" letter-spacing="1">✠  PROMOTOR FIDEI  ✠</text>
+
+    <text x="62" y="332" font-size="13" letter-spacing="0.5">Fuit homo missus a Deo, cui nomen</text>
+    <text x="62" y="352" font-size="13" letter-spacing="0.5">erat Ioannes. Hic venit in testimonium</text>
+    <text x="62" y="372" font-size="13" letter-spacing="0.5">ut testimonium perhiberet de lumine,</text>
+    <text x="62" y="392" font-size="13" letter-spacing="0.5">ut omnes crederent per illum.</text>
+    <text x="62" y="412" font-size="13" letter-spacing="0.5">Non erat ille lux, sed ut testimonium</text>
+    <text x="62" y="430" font-size="12" opacity="0.6">perhiberet de lumine · Ioannes I · Vulgata</text>
+  </g>
+
+  <!-- Right column -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#9e8040" opacity="0.85">
+
+    <text x="420" y="178" font-size="13" letter-spacing="0.5">Erat lux vera, quae illuminat omnem</text>
+    <text x="420" y="198" font-size="13" letter-spacing="0.5">hominem venientem in hunc mundum.</text>
+    <text x="420" y="218" font-size="13" letter-spacing="0.5">In mundo erat, et mundus per ipsum</text>
+    <text x="420" y="238" font-size="13" letter-spacing="0.5">factus est, et mundus eum non cognovit.</text>
+    <text x="420" y="258" font-size="13" letter-spacing="0.5">In propria venit, et sui eum non</text>
+    <text x="420" y="278" font-size="13" letter-spacing="0.5">receperunt. Quotquot autem receperunt</text>
+
+    <!-- Red rubric -->
+    <text x="420" y="308" font-size="12" fill="#8b0000" opacity="0.9" letter-spacing="1">✠  SANCTA TRADITIO  ✠</text>
+
+    <text x="420" y="332" font-size="13" letter-spacing="0.5">eum, dedit eis potestatem filios Dei</text>
+    <text x="420" y="352" font-size="13" letter-spacing="0.5">fieri, his qui credunt in nomine eius.</text>
+    <text x="420" y="372" font-size="13" letter-spacing="0.5">Et Verbum caro factum est, et habitavit</text>
+    <text x="420" y="392" font-size="13" letter-spacing="0.5">in nobis: et vidimus gloriam eius.</text>
+    <text x="420" y="412" font-size="13" letter-spacing="0.5">Gloriam quasi Unigeniti a Patre,</text>
+    <text x="420" y="430" font-size="12" opacity="0.6">plenum gratiae et veritatis · Vulgata</text>
+  </g>
+
+  <!-- Bottom rule -->
+  <line x1="58" y1="445" x2="742" y2="445" stroke="#6a5020" stroke-width="1" opacity="0.5"/>
+
+  <!-- Footer inscription -->
+  <text x="400" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="10"
+        fill="#8a6830" letter-spacing="4" opacity="0.8">BIBLIA SACRA VULGATA · IOANNES · CAPUT I</text>
+
+  <!-- Noise texture overlay -->
+  <rect width="800" height="500" fill="#0a0805" opacity="0.18" filter="url(#parchment-noise)"/>
+
+  <!-- Corner cross ornaments -->
+  <text x="44" y="56" font-size="14" fill="#8a6030" opacity="0.6" font-family="serif">✠</text>
+  <text x="730" y="56" font-size="14" fill="#8a6030" opacity="0.6" font-family="serif">✠</text>
+  <text x="44" y="477" font-size="14" fill="#8a6030" opacity="0.6" font-family="serif">✠</text>
+  <text x="730" y="477" font-size="14" fill="#8a6030" opacity="0.6" font-family="serif">✠</text>
+</svg>

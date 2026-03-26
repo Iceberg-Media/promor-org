@@ -27,14 +27,18 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  /* Use 100% so the user's own browser/OS font-size preference is respected.
+     If they set 20px in accessibility settings, everything scales with it. */
+  font-size: 100%;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
-  line-height: 1.7;
+  /* Base body text is 1.125rem (≈18px at default) — comfortable for elderly readers */
+  font-size: 1.125rem;
+  line-height: 1.85;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -116,14 +120,14 @@ section {
 
 .navbar-brand {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--gold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .navbar-tagline {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -188,18 +192,18 @@ section {
 .hero-eyebrow {
   display: inline-block;
   font-family: var(--font-serif);
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--red-bright);
   border: 1px solid var(--red);
-  padding: 0.35rem 1.2rem;
+  padding: 0.4rem 1.4rem;
   margin-bottom: 2rem;
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-size: clamp(3rem, 9vw, 6.5rem);
   color: var(--gold);
   text-shadow:
     0 0 40px rgba(201, 170, 93, 0.35),
@@ -211,34 +215,37 @@ section {
 
 .hero-title-latin {
   display: block;
-  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   color: var(--text-secondary);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  /* clamp: min 1.15rem, fluid, max 1.4rem — always readable without zooming */
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
   color: var(--text-secondary);
-  max-width: 580px;
-  margin: 1.5rem auto 2.5rem;
-  line-height: 1.8;
+  max-width: 600px;
+  margin: 1.75rem auto 2.75rem;
+  line-height: 1.9;
   font-style: italic;
 }
 
 .hero-cta {
   display: inline-block;
   font-family: var(--font-serif);
-  font-size: 0.8rem;
-  letter-spacing: 0.25em;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--bg-primary);
   background: var(--gold);
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.75rem;
   border: 1px solid var(--gold);
   transition: background 0.2s, color 0.2s;
+  /* Minimum 44px touch target for accessibility */
+  min-height: 44px;
 }
 
 .hero-cta:hover {
@@ -251,11 +258,12 @@ section {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.3em;
   color: var(--text-dim);
   text-transform: uppercase;
   animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 @keyframes pulse {
@@ -314,9 +322,9 @@ section {
   left: 0;
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-  padding: 2rem 1rem 0.8rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  padding: 2rem 1rem 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-dim);
   font-family: var(--font-serif);
@@ -342,7 +350,7 @@ section {
 
 .section-label {
   font-family: var(--font-serif);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--red-bright);
@@ -350,15 +358,16 @@ section {
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
   color: var(--gold);
   margin-bottom: 1.5rem;
 }
 
 .section-body {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.85;
+  /* 1.15rem ≈ 18–19px — comfortable without glasses for most elderly readers */
+  font-size: 1.15rem;
+  line-height: 1.9;
 }
 
 .section-body p + p {
@@ -375,8 +384,9 @@ section {
   align-items: flex-start;
   gap: 0.75rem;
   color: var(--text-secondary);
-  margin-bottom: 0.85rem;
-  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .feature-list li::before {
@@ -389,13 +399,13 @@ section {
 .launch-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   background: rgba(139, 0, 0, 0.15);
   border: 1px solid var(--red);
-  padding: 0.5rem 1.2rem;
+  padding: 0.65rem 1.4rem;
   margin-top: 1.5rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--red-bright);
   font-family: var(--font-serif);
@@ -467,8 +477,8 @@ section {
 
 .scroll-heading {
   font-family: var(--font-serif);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold-dim);
   text-align: center;
@@ -495,16 +505,16 @@ section {
 
 .scroll-title {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #5a3a10;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   font-weight: 700;
 }
 
 .scroll-verdict {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #3a2008;
-  line-height: 1.75;
+  line-height: 1.85;
   font-style: italic;
 }
 
@@ -512,13 +522,13 @@ section {
   font-style: normal;
   color: var(--red);
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .scroll-cite {
   display: block;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #6a4a20;
   text-align: right;
   font-style: normal;
@@ -536,8 +546,8 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #8a6030;
   font-family: var(--font-serif);
@@ -578,9 +588,9 @@ section {
 .teaser-card::after { bottom: 1rem; right: 1rem; }
 
 .teaser-text {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
-  line-height: 1.85;
+  line-height: 1.9;
   font-style: italic;
 }
 
@@ -591,7 +601,7 @@ section {
 
 .rosary-note {
   margin-top: 1.5rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: var(--gold-dim);
   font-family: var(--font-serif);
@@ -641,8 +651,8 @@ section {
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.85rem;
+  gap: 0.5rem;
+  font-size: 1rem;
   color: var(--text-secondary);
 }
 
@@ -655,7 +665,7 @@ section {
 }
 
 .footer-status {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   color: var(--text-dim);
   letter-spacing: 0.05em;
   text-align: center;
@@ -670,9 +680,9 @@ section {
   padding-top: 1.5rem;
   border-top: 1px solid var(--bg-card-border);
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 /* ===== Utility ===== */
